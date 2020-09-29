@@ -1,0 +1,6 @@
+.vagrant/*
+data/*
+packages/*.deb
+packages/*.tar
+packages/*.tar.gz
+packages/k3s
