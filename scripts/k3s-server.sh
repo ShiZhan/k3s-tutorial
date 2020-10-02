@@ -1,2 +1,2 @@
 #!/bin/bash
-nohup sudo k3s server --node-external-ip 192.168.33.20 > $HOSTNAME.log &
+nohup sudo k3s server --docker --no-deploy traefik --flannel-iface enp0s8 > $HOSTNAME.log &
