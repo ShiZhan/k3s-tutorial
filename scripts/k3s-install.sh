@@ -20,3 +20,7 @@ dpkg -i $all_packages
 
 # copy k3s & load k3s images
 cp /vagrant/packages/k3s /usr/local/bin/k3s && chmod +x /usr/local/bin/k3s && docker load -i /vagrant/packages/k3s-airgap-images-amd64.tar
+
+# test images
+docker load -i /vagrant/packages/busybox~1.32.0.tar
+docker load -i /vagrant/packages/nginx~1.19.2-alpine.tar
