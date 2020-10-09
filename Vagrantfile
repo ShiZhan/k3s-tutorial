@@ -1,6 +1,6 @@
 Vagrant.configure("2") do |config|
   config.vm.box = "ubuntu/focal64"
-  config.vm.box_version = "20200618.0.0"
+  config.vm.box_version = "0"
   config.vm.box_check_update = false
   config.vm.provider "virtualbox" do |vb|
     vb.memory = "1024"
@@ -30,11 +30,7 @@ Vagrant.configure("2") do |config|
   SHELL
 
   IP0 = 20
-  config.vm.define "controller" do |controller|
-    controller.vm.network "private_network", ip: "192.168.33.#{IP0}"
-    controller.vm.hostname = "controller"
-  end
-  (1..2).each do |i|
+  (0..2).each do |i|
     config.vm.define "node#{i}" do |node|
       node.vm.network "private_network", ip: "192.168.33.#{i + IP0}"
       node.vm.hostname = "node#{i}"

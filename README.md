@@ -24,7 +24,7 @@ Example:
 {
     "name": "ubuntu/focal64",
     "versions": [{
-        "version": "current",
+        "version": "0",
         "providers": [{
             "name": "virtualbox",
             "url": "focal-server-cloudimg-amd64-vagrant.box"
@@ -33,10 +33,16 @@ Example:
 }
 ```
 
-Add downloaded box, which is versioned with given metadata file (without this file, all imported box will begin versioning from 0):
+Add downloaded box, its version and name will be set by given json file.
 
 ```bash
 vagrant box add foo.json
+```
+
+Or just add directly (not encouraged), its version will begin from 0 automatically, and named with file name.
+
+```bash
+vagrant box add focal-server-cloudimg-amd64-vagrant.box
 ```
 
 Check it out:
