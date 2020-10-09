@@ -1,6 +1,6 @@
 # Introduction
 
-2+1 nodes cluster, node image based on [ubuntu-focal](http://cloud-images.ubuntu.com/focal/20200618/focal-server-cloudimg-amd64-vagrant.box).
+This [Vagrantfile](Vagrantfile) builds a 2+1 nodes virtual machine cluster, node image based on [ubuntu-focal](http://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64-vagrant.box).
 
 Hosts:
 
@@ -10,7 +10,7 @@ Hosts:
 
 All machines are connected by a host-only network.
 
-Each with 1GB memory and 2 cores, for 4 core hosts, the minimal setup could be controller + node1. 
+Each with 1GB memory and 1 core. 
 
 ## Get and Manage Boxes
 
@@ -24,7 +24,7 @@ Example:
 {
     "name": "ubuntu/focal64",
     "versions": [{
-        "version": "20200618.0.0",
+        "version": "current",
         "providers": [{
             "name": "virtualbox",
             "url": "focal-server-cloudimg-amd64-vagrant.box"
@@ -33,7 +33,7 @@ Example:
 }
 ```
 
-Add downloaded box using metadata file with box version (without this file, all imported box will begin versioning from 0):
+Add downloaded box, which is versioned with given metadata file (without this file, all imported box will begin versioning from 0):
 
 ```bash
 vagrant box add foo.json
