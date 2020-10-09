@@ -12,7 +12,7 @@ All machines are connected by a host-only network.
 
 Each with 1GB memory and 1 core. 
 
-## Get and Manage Boxes
+## Prepare images
 
 Node image is based on [ubuntu-focal](http://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64-vagrant.box).
 
@@ -46,6 +46,8 @@ Confirm the box is in position:
 ```bash
 vagrant box list
 ```
+
+[Package preparation](packages/README.md).
 
 ## Boot up cluster
 
@@ -83,7 +85,7 @@ vagrant@node0:~$ nohup: redirecting stderr to stdout
 vagrant@node0:~$
 ```
 
-Wait a dozen seconds, till controller ready ...
+Wait a dozen seconds, till controller is ready ...
 
 ```bash
 vagrant@node0:~$ sudo k3s kubectl get po -A
@@ -139,4 +141,23 @@ Consult [Vagrant Documentation](https://www.vagrantup.com/docs).
 
 Also, a brief course: [vagrant-presentation](https://github.com/cs-course/vagrant-presentation).
 
+## Evaluation
+
+- Setup dashboard
+  - Grafana + Promtheues
+- Generate workload
+  - Use commandline
+    - Bulk data copy
+  - Realworld application
+    - Nginx
+
+## Think further
+
+- Performance insulation between containers.
+
+- Performance guarantee for storage volumes.
+
+More insights are encouraged.
+
+---
 Zhan.Shi @ 2017-2020
